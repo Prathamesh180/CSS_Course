@@ -11,16 +11,28 @@ body{
 
 [data-tooltip]::before,
 [data-tooltip]::after{
-    --translate-y: ;
+    --scale: 0;
     --arrow-size: .5rem;
     --tooltip-color: #333;
+
     position: absolute;
     left: 50%;
-    transform: translate(-50%, var(--translate-y));
+    transform: translate(-50%, var(--translate-y)) scale(var(--scale));
+
+    transition: transform 500ms;
+    animation-timing-function: linear;
 }
 
-[data-tooltip]:hover::before{
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after{
+    --scale: 1;
+
+    transition-timing-function: cubic-bezier(0.25, 0.1, 0.45, 1.93);
+}
+
+[data-tooltip]::before{
     --translate-y: calc(-100% - var(--arrow-size));
+
     content: attr(data-tooltip);
     background-color: var(--tooltip-color);
     color: white;
@@ -29,11 +41,16 @@ body{
     width: max-content;
     max-width: 100%;
     text-align: center;
+
+    transform-origin: bottom center;
 }
 
-[data-tooltip]:hover::after{
+[data-tooltip]::after{
     --translate-y: calc(-1 * var(--arrow-size));
+
     content: '';
     border: var(--arrow-size) solid transparent;
     border-top-color: var(--tooltip-color);
+
+    transform-origin: top center;
 }
