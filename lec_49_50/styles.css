@@ -1,0 +1,46 @@
+/* Lecture - 49
+transition: color 1s linear 2s;
+1. transition-property: background-color, color; - specifies property on which transition to apply.
+2. transition-duration: 1s; - time taken for transition.
+3. transition-timing-function: linear; (linear, ease-in, ease-out, ease-in-out) - manner in which transition happen.
+4. transition-delay: 2s; - delay to keep before transition is begined.
+
+Lecture - 50 ->
+ */
+
+*{
+    box-sizing: border-box;
+}
+.body{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    flex-direction: column;
+}
+.btn{
+    margin: 1rem;
+    background-color:hsl(200, 100%, 50%);
+    border: none;
+    outline: none;
+    padding: .5em 1em;
+    border-radius: .3rem;
+    color: white;
+    cursor: pointer;
+}
+.btn-hide{
+    opacity: .7;
+    transition: opacity 500ms;
+}
+.btn-hide:hover{
+    opacity: 1;
+}
+.btn-hide:focus{
+    opacity: 0;
+}
+.btn-color:focus{
+    background-color: hsl(20, 100%, 50%);
+    color: #333;
+}

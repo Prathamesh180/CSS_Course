@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div{
+            --angle: -10deg;
+            background-color: red;
+            width: 150px;
+            height: 150px;
+            color: wDivte;
+            font-size: 2rem;
+
+            animation-name: custom;
+            animation-duration: 1s;
+            animation-timing-function: linear;
+            animation-delay: .5s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+
+            /* Transform does not disturb other elements. */
+            transform: translate(100%, 100%); /*translates x% of it's own size.*/
+            transform: rotate(var(--angle)); /* 90deg OR .45turn */
+            transform: scale(var(1.5));    /* makes it 1.5 times bigger */
+        }
+        
+        div:hover{
+            animation-play-state: paused;
+        }
+        @keyframes custom{
+            /* from{
+                transform: scale(.5, .5);
+            }
+
+            to{
+                transform: scale(1.5, 1.5);
+            } */
+        }
+    </style>
+</head>
+<body>
+    <div class="div">Div</div>
+    <div>Div</div>
+    <div>Div</div>
+    <div>Div</div>
+    <div>Div</div>
+</body>
+</html>
