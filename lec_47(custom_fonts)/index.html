@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    @font-face{
+        font-family: Montserrat;
+        src:
+            url('mention url here') format('woff2'),
+            url('mention 2nd url here') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        /*
+        SWAP IS MOST COMMONLY USED
+        This specifies how font will be displayed, i.e what happens before it is rendered. 
+            1. block : don't show anything for very long time & wait for main font, after that time if not rendered then show fallback.
+            2. swap : shows fallback in short time but wait for font for long time and renders when loaded.
+            3. fallback : wait for short time and shows fallback and if not not rendered don't bother about main font
+            4. optional : wait for micro time and if not rendered don't bother
+            font-display: block or swap or fallback or optional*/
+        font-display: block;
+    }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

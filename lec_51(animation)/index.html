@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        /* Specify animation name in animation: ; value and other parameters.
+        Specify what to do in animation in @keyframes [animation-name]{what to do}.
+
+        param1 : animation-name (any name user defined.)
+        param5 : forwards : keep animation after time elapsed.
+        backwards : use style metioned in 0% before starting animation.
+        both : use both forwards and backwards.
+        param6 : animation-iteration-count - count for which animation to perform.
+        infinite : iterates for infinite no. of times.
+        param7 : animation-direction : alternate: makes animation back and forth N no. of times.
+         */
+
+        div{
+            background-color: red;
+            width: 150px;
+            height: 150px;
+            color: white;
+            font-size: 2rem;
+            /* animation: change-color 1s linear 1s forwards infinite alternate,
+                        change-size 1s linear 1s forwards infinite alternate;*/
+                        
+            /* OR 
+            Option below is more cleaner.
+            */
+
+            animation-name: change-color, change-size;
+            animation-duration: 1s;
+            animation-timing-function: linear;
+            animation-delay: 1s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+        
+        div:hover{
+            /* Pauses our animation. */
+            animation-play-state: paused;
+        }
+        @keyframes change-color{
+            /* 0% is used before animation starts. 
+               It's slow as it needs to calculate stuffs like ht and wd and hence is inefficient.
+            */
+            0%{
+                background-color:darkkhaki ;
+            }
+
+            25%{
+                background-color: aqua;
+            }
+
+            50%{
+                background-color: yellow;
+            }
+
+            75%{
+                background-color: chartreuse;
+            }
+
+            100%{
+                color: black;
+                background-color: green;
+            }
+        }
+
+        @keyframes change-size {
+            from{
+
+            }
+            to{
+                width: 200px;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>Hi</div>
+</body>
+</html>

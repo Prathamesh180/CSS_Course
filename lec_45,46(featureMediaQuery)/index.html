@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-color: red;
+        }
+
+        /* 1] Feature Queries
+            apply bck-clr as yellow only if browser NOT supports background-color:revert AND background-color is pink. */
+
+            /* @supports (not(background-color: revert)) and 
+            (background-color: pink){
+                div{
+                    background-color: yellow;
+                }
+            } */
+
+        /* 2] Media Queries
+            Step 1. Define category of devices for which media query will be applied.
+            step 2. Write property you want to check.
+
+            a) And makes changes when all conditions are satisfied, here when device is screen(phone, pc, etc) or orintation is landscape */
+
+        /* @media screen, (orientation: landscape){
+            div{
+                background-color: grey;
+            }
+        } */
+
+        /* b) And makes changes when any 1 conditions is satisfied*/
+
+        /* @media print and (min-width: 300px){
+            div{
+                background-color: grey;
+            }
+        } */
+    </style>
+</head>
+<body>
+    <div>Hi</div>
+</body>
+</html>
